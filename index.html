@@ -83,27 +83,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>oom避免方法总结<br>减少对象内存占用：</p>
-<pre><code>使用轻量数据结构
-少用ENUM：比static变量占用内存多几倍
-减少bitmap内存占用：预加载宽高(inJustDecodeBounds=true)，缩小size（缩小2的inSampleSize次幂），改解码方式（一般不太方便），ARGB_8888一个像素32位，换成其他的，但是图片颜色，清晰度什么的会受影响。
-</code></pre><p>内存对象复用：</p>
-<pre><code>bitmap:LRUCache
-listview:item view
-recyclerview:view holder
-避免在onDraw()等频繁执行的方法内创建对象
-stringbuilder/stringbuffer
-</code></pre><p>减少内存泄漏</p>
-<pre><code>优先用application context代替activity context。
-handler：onDestroy()之前remove掉消息队列中的消息和runnable对象，或者static加weakReference引用外部类。 引用链如下：looper-&gt;messagequeue-&gt;message-&gt;handler-&gt;outter class
-listener的注销
-cursor,connection关闭。
-容器中对象泄露。
-</code></pre>
+        <h1 id="oom避免方法总结"><a href="#oom避免方法总结" class="headerlink" title="oom避免方法总结"></a>oom避免方法总结</h1><h3 id="减少对象内存占用："><a href="#减少对象内存占用：" class="headerlink" title="减少对象内存占用："></a>减少对象内存占用：</h3><ul>
+<li>使用轻量数据结构</li>
+<li>少用ENUM：比static变量占用内存多几倍<br>  <img src="http://img.blog.csdn.net/20160530154046440?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="枚举占用内存" title="枚举占用内存"></li>
+<li>减少bitmap内存占用：预加载宽高(inJustDecodeBounds=true)，缩小size（缩小2的inSampleSize次幂），改解码方式（一般不太方便），ARGB_8888一个像素32位，换成其他的，但是图片颜色，清晰度什么的会受影响。</li>
+</ul>
+<h3 id="内存对象复用："><a href="#内存对象复用：" class="headerlink" title="内存对象复用："></a>内存对象复用：</h3><ul>
+<li>bitmap:LRUCache</li>
+<li>listview:item view</li>
+<li>recyclerview:view holder</li>
+<li>避免在onDraw()等频繁执行的方法内创建对象</li>
+<li>stringbuilder/stringbuffer</li>
+</ul>
+<h3 id="减少内存泄漏"><a href="#减少内存泄漏" class="headerlink" title="减少内存泄漏"></a>减少内存泄漏</h3><ul>
+<li>优先用application context代替activity context。</li>
+<li>handler：onDestroy()之前remove掉消息队列中的消息和runnable对象，或者static加weakReference引用外部类。<br>引用链如下：looper-&gt;messagequeue-&gt;message-&gt;handler-&gt;outter class</li>
+<li>listener的注销</li>
+<li>cursor,connection关闭。</li>
+<li>容器中对象泄露。</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://uiiang.github.io/2017/05/12/解决内存泄露OOM/" data-id="cj2l60fj90000p3s6xugnj190" class="article-share-link">Share</a>
+      <a data-url="http://uiiang.github.io/2017/05/12/解决内存泄露OOM/" data-id="cj2l66a6v0001qcs6yi2f5obm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +142,7 @@ cursor,connection关闭。
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://uiiang.github.io/2017/05/11/第一个博客/" data-id="cj2l60fjd0001p3s6r91o5w8c" class="article-share-link">Share</a>
+      <a data-url="http://uiiang.github.io/2017/05/11/第一个博客/" data-id="cj2l66a6z0002qcs65glsmmci" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +187,7 @@ cursor,connection关闭。
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://uiiang.github.io/2017/05/11/hello-world/" data-id="cj2l60fjp0002p3s629fvzocy" class="article-share-link">Share</a>
+      <a data-url="http://uiiang.github.io/2017/05/11/hello-world/" data-id="cj2l66a6r0000qcs61kazp5bt" class="article-share-link">Share</a>
       
       
     </footer>
