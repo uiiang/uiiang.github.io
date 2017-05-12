@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="饼爷胡B扯">
 <meta property="og:description" content="oom避免方法总结减少对象内存占用： 使用轻量数据结构 少用ENUM：比static变量占用内存多几倍   减少bitmap内存占用：预加载宽高(inJustDecodeBounds=true)，缩小size（缩小2的inSampleSize次幂），改解码方式（一般不太方便），ARGB_8888一个像素32位，换成其他的，但是图片颜色，清晰度什么的会受影响。  内存对象复用： bitmap:LRU">
 <meta property="og:image" content="http://img.blog.csdn.net/20160530154046440?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2017-05-12T01:39:05.000Z">
+<meta property="og:updated_time" content="2017-05-12T02:05:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决内存泄露OOM">
 <meta name="twitter:description" content="oom避免方法总结减少对象内存占用： 使用轻量数据结构 少用ENUM：比static变量占用内存多几倍   减少bitmap内存占用：预加载宽高(inJustDecodeBounds=true)，缩小size（缩小2的inSampleSize次幂），改解码方式（一般不太方便），ARGB_8888一个像素32位，换成其他的，但是图片颜色，清晰度什么的会受影响。  内存对象复用： bitmap:LRU">
@@ -93,7 +93,7 @@
 <li>减少bitmap内存占用：预加载宽高(inJustDecodeBounds=true)，缩小size（缩小2的inSampleSize次幂），改解码方式（一般不太方便），ARGB_8888一个像素32位，换成其他的，但是图片颜色，清晰度什么的会受影响。</li>
 </ul>
 <h3 id="内存对象复用："><a href="#内存对象复用：" class="headerlink" title="内存对象复用："></a>内存对象复用：</h3><ul>
-<li>bitmap:LRUCache</li>
+<li>bitmap:<a href="https://uiiang.github.io/2017/04/21/%E8%A7%A3%E8%AF%BBLruCache%E7%B1%BB/">LRUCache</a></li>
 <li>listview:item view</li>
 <li>recyclerview:view holder</li>
 <li>避免在onDraw()等频繁执行的方法内创建对象</li>
@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://uiiang.github.io/2017/03/12/解决内存泄露OOM/" data-id="cj2l7704k0001yrs6xe1f09uv" class="article-share-link">Share</a>
+      <a data-url="http://uiiang.github.io/2017/03/12/解决内存泄露OOM/" data-id="cj2l7ahcf0001zks6318lofde" class="article-share-link">Share</a>
       
       
     </footer>
